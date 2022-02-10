@@ -62,6 +62,12 @@ export default {
       errorFieldHandler: {},
     };
   },
+  mounted() {
+    let userInfo = storageService.getUser();
+    if (userInfo && userInfo.userId) {
+      this.$router.push("accueil");
+    }
+  },
   methods: {
     onSignUp(e) {
       e.preventDefault();
