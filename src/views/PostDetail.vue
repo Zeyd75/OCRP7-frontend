@@ -108,8 +108,19 @@ export default {
             },
           }
         )
-        .then((res) => {
-          console.log(res);
+        .then(() => {
+          const newComment = {
+            createdAt: "à l'instant",
+            content: this.newComment.content,
+            user: {
+              pseudo: "moi",
+            },
+          };
+          // this.newComment.user = {
+          //   pseudo:
+          // };
+          this.comments.push(newComment);
+          console.log(this.newComment);
           this.newComment.content = "";
         })
         .catch((error) => {
